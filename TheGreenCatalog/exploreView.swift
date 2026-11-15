@@ -6,13 +6,42 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct exploreView: View {
+    
+    struct Plant: Codable, Identifiable {
+        let id: Int
+        let name: String?
+        let image: String?
+        let sunlight: [String]?
+        let watering : String?
+        
+        enum CodingKeys: String, CodingKey {
+            case id
+            case name = "common_name"
+            case image =  "default_image"
+            case sunlight
+            case watering
+        }
+    }
+    
+    func getPlantData() async{
+        
+    }
+    
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack{
+            Text("")
+                .navigationTitle("Explore Plants")
+                .logoImage()
+                
+        }
     }
 }
 
 #Preview {
     exploreView()
 }
+
